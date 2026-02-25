@@ -1,11 +1,12 @@
 :root {
-  --bg: #0b1021;
-  --card: #161d35;
-  --accent: #6ea8fe;
-  --text: #e6ecff;
-  --muted: #9ba7cf;
-  --border: #2a355f;
-  --success: #8be9a4;
+  --bg: #0f1530;
+  --card: #1b2545;
+  --accent: #9ec3ff;
+  --text: #f5f8ff;
+  --muted: #d2ddff;
+  --border: #3f4f83;
+  --success: #b5ffc7;
+  --warning: #ffd99a;
 }
 
 * {
@@ -15,7 +16,7 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: linear-gradient(180deg, #090d1a 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #0d1228 0%, var(--bg) 100%);
   color: var(--text);
   min-height: 100vh;
 }
@@ -71,7 +72,7 @@ body {
 
 .card {
   border: 1px solid var(--border);
-  background: color-mix(in oklab, var(--card), black 10%);
+  background: color-mix(in oklab, var(--card), black 6%);
   border-radius: 14px;
   padding: 1rem;
   cursor: pointer;
@@ -132,7 +133,7 @@ body {
   padding: 1.2rem;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: #101832;
+  background: #151f40;
 }
 
 .modal-close {
@@ -150,48 +151,85 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  gap: 0.75rem;
 }
 
-.copy-btn {
+.modal-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.copy-btn,
+.run-btn {
   border: 1px solid var(--border);
-  background: #172040;
   color: var(--text);
   border-radius: 8px;
   padding: 0.35rem 0.75rem;
   cursor: pointer;
 }
 
-pre {
+.copy-btn {
+  background: #20305e;
+}
+
+.run-btn {
+  background: #234176;
+}
+
+.result-header {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-header h4 {
+  margin: 0;
+}
+
+.runtime-status {
+  color: var(--warning);
+  font-size: 0.9rem;
+}
+
+pre,
+.output-box {
   margin: 0.65rem 0 0;
   border-radius: 12px;
   overflow: auto;
   padding: 1rem;
-  background: #0b122a;
+  background: #101a37;
   border: 1px solid var(--border);
 }
 
 code {
-  color: #dbe7ff;
+  color: #f2f7ff;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.9rem;
   line-height: 1.55;
 }
 
 .token-keyword {
-  color: #ff89d3;
+  color: #ffb8e8;
 }
 
 .token-string {
-  color: #a5f3a9;
+  color: #c6ffd0;
 }
 
 .token-comment {
-  color: #90a0d0;
+  color: #d5dcff;
   font-style: italic;
 }
 
 @media (max-width: 620px) {
   .modal-content {
     padding-top: 2rem;
+  }
+
+  .code-header,
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
