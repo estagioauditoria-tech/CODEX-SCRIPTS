@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Scripts de Automação</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Repositório de Scripts</h1>
+      <p>Catálogo estático para consulta rápida de automações.</p>
+    </header>
+
+    <main class="layout" aria-live="polite">
+      <nav class="breadcrumbs" aria-label="Navegação" id="breadcrumbs"></nav>
+
+      <section>
+        <h2 id="section-title">Pastas de Serviços</h2>
+        <div id="grid" class="grid" role="list"></div>
+      </section>
+    </main>
+
+    <div id="script-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-overlay" data-close-modal="true"></div>
+      <article class="modal-content">
+        <button class="modal-close" id="close-modal" aria-label="Fechar modal">×</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+
+        <div class="code-header">
+          <span>Código</span>
+          <button id="copy-code" class="copy-btn">Copiar código</button>
+        </div>
+        <pre><code id="modal-code"></code></pre>
+      </article>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
