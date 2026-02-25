@@ -9,7 +9,7 @@
   <body>
     <header class="topbar">
       <h1>Repositório de Scripts</h1>
-      <p>Catálogo estático para consulta rápida de automações.</p>
+      <p>Catálogo interativo para explorar e executar automações direto no site.</p>
     </header>
 
     <main class="layout" aria-live="polite">
@@ -30,12 +30,22 @@
 
         <div class="code-header">
           <span>Código</span>
-          <button id="copy-code" class="copy-btn">Copiar código</button>
+          <div class="modal-actions">
+            <button id="run-code" class="run-btn">Executar no site</button>
+            <button id="copy-code" class="copy-btn">Copiar código</button>
+          </div>
         </div>
         <pre><code id="modal-code"></code></pre>
+
+        <div class="result-header">
+          <h4>Saída</h4>
+          <span id="runtime-status" class="runtime-status">Pronto para executar</span>
+        </div>
+        <pre class="output-box"><code id="modal-output">Clique em "Executar no site" para ver o resultado aqui.</code></pre>
       </article>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.3/full/pyodide.js"></script>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
